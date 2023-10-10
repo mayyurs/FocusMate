@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro Timer & To-Do List</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-ASphS1Oh2ZesV7UuAYAmCR2kzFtpVQs4Qx+XtGomH7bZdKBwecfWxMk0n4iLrY9YMGQTKtzLo0sJh0UUQ8wOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    /* Your custom styles can go here */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="date-time">
+        <span id="date"></span>
+        <span id="time"></span>
+      </div>
+      <div class="motivational-quote">
+        <blockquote id="quote"></blockquote>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="timer">
+        <div class="timer-display">
+          <span id="timer">25:00</span>
+        </div>
+        <div class="timer-buttons">
+          <button id="startBtn">Start</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+      <div class="todo-app">
+        <h2>To-Do List <img src="images/icon.png"></h2><br>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="what's for the day?">
+          <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="list-container">
+          <!--  <li class="checked">Task 1</li>
+          <li>Task 2</li>
+          <li>Task 3</li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="toggle-mode">
+      <label for="modeToggle">
+        <!-- <i class="material-icons">wb_sunny</i> Sun icon for light mode -->
+        <!-- <i class="material-icons">nights_stay</i> Moon icon for dark mode -->
+      </label>
+      <!-- <input type="checkbox" id="modeToggle"> -->
+    </div>
+  </div>
+  <audio id="notificationSound">
+    <source src="audio/iphone_14_notification.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Timer Completed</h3>
+      <p>Take a 5-minute break</p>
+      <button id="closePopup">Close</button>
+    </div>
+  </div>
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>

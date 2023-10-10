@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "FocusMate : Pomodoro & To-do List",
+  "version": "1.0",
+  "description": "A Productivity extension for Google Chrome",
+  "icons": {
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    },
+    "default_popup": "popup/popup.html",
+    "js": ["jquery.js"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "notifications"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*", "audio/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
